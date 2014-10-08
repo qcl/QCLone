@@ -12,6 +12,8 @@ Put your access token in the file ``fb.json``, the format is
         "access_token":"YOUR ACCESS TOKEN"
     }
 
+Note that it need the access token with ``publish_actions`` permission.
+
 ##Status
 Put the message in the file ``status.json``, it's a array of objects, the format is
 
@@ -22,10 +24,13 @@ Put the message in the file ``status.json``, it's a array of objects, the format
         "link":"http://blog.qcl.tw/"
     }]
 
-##Setup conrtab
+##Setup crontab
+Use a UNIX machine, 
 
     $ crontab -e
 
-Add line:
+Then add line:
 
     15 20 * * * python fb.py
+
+It means that the machine will execute the command ``python fb.py`` at 20:15 every day.
